@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — HabitFlow
+   Paleta del Designer:
+   Primario: Indigo  #6366F1
+   Acento:   Violet  #8B5CF6
+   Éxito:    Emerald #10B981
+   Warning:  Amber   #F59E0B
+   ============================================================ */
+
+@layer base {
+  :root {
+    --background:         249 250 251;  /* #F9FAFB */
+    --foreground:         17 24 39;     /* #111827 */
+    --card:               255 255 255;
+    --card-foreground:    17 24 39;
+    --popover:            255 255 255;
+    --popover-foreground: 17 24 39;
+    --primary:            99 102 241;   /* #6366F1 Indigo */
+    --primary-foreground: 255 255 255;
+    --secondary:          139 92 246;   /* #8B5CF6 Violet */
+    --secondary-foreground: 255 255 255;
+    --muted:              243 244 246;  /* #F3F4F6 */
+    --muted-foreground:   107 114 128;  /* #6B7280 */
+    --accent:             238 239 255;
+    --accent-foreground:  67 56 202;
+    --destructive:        239 68 68;    /* #EF4444 */
+    --destructive-foreground: 255 255 255;
+    --border:             229 231 235;  /* #E5E7EB */
+    --input:              229 231 235;
+    --ring:               99 102 241;
+    --success:            16 185 129;   /* #10B981 Emerald */
+    --warning:            245 158 11;   /* #F59E0B Amber */
+    --radius:             0.5rem;
+  }
+
+  .dark {
+    --background:         15 17 23;     /* #0F1117 */
+    --foreground:         249 250 251;  /* #F9FAFB */
+    --card:               26 29 39;     /* #1A1D27 */
+    --card-foreground:    249 250 251;
+    --popover:            26 29 39;
+    --popover-foreground: 249 250 251;
+    --primary:            129 140 248;  /* indigo-400 */
+    --primary-foreground: 15 17 23;
+    --secondary:          167 139 250;  /* violet-400 */
+    --secondary-foreground: 15 17 23;
+    --muted:              31 35 48;
+    --muted-foreground:   156 163 175;  /* #9CA3AF */
+    --accent:             38 42 58;
+    --accent-foreground:  199 210 254;  /* indigo-200 */
+    --destructive:        239 68 68;
+    --destructive-foreground: 249 250 251;
+    --border:             39 44 61;
+    --input:              39 44 61;
+    --ring:               129 140 248;
+    --success:            52 211 153;   /* emerald-400 */
+    --warning:            251 191 36;   /* amber-400 */
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: rgb(var(--border));
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Clases de utilidad para colores semánticos del tema */
+@layer utilities {
+  .bg-background    { background-color: rgb(var(--background)); }
+  .bg-card          { background-color: rgb(var(--card)); }
+  .bg-primary       { background-color: rgb(var(--primary)); }
+  .bg-muted         { background-color: rgb(var(--muted)); }
+  .bg-accent        { background-color: rgb(var(--accent)); }
+  .bg-destructive   { background-color: rgb(var(--destructive)); }
+
+  .text-foreground       { color: rgb(var(--foreground)); }
+  .text-card-foreground  { color: rgb(var(--card-foreground)); }
+  .text-primary          { color: rgb(var(--primary)); }
+  .text-primary-foreground { color: rgb(var(--primary-foreground)); }
+  .text-muted-foreground { color: rgb(var(--muted-foreground)); }
+  .text-accent-foreground { color: rgb(var(--accent-foreground)); }
+
+  .border-border { border-color: rgb(var(--border)); }
+
+  .hover\:bg-accent:hover { background-color: rgb(var(--accent)); }
+  .hover\:text-accent-foreground:hover { color: rgb(var(--accent-foreground)); }
+  .hover\:bg-primary\/90:hover { background-color: rgb(var(--primary) / 0.9); }
+}
