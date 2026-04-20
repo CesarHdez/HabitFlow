@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HabitFlow</title>
+  <script>
+    // Redirect SPA routes to index.html preserving the path
+    const path = window.location.pathname.replace('/HabitFlow', '') || '/';
+    sessionStorage.setItem('redirect', path + window.location.search);
+    window.location.replace('/HabitFlow/');
+  </script>
+</head>
+<body></body>
+</html>
