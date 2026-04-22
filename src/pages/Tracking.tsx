@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, CheckCircle2, Circle, CalendarDays, LayoutGrid } from 'lucide-react'
-import { format, parseISO, isFuture, addDays, subDays, startOfMonth, endOfMonth, startOfWeek, eachDayOfInterval, getDay, addMonths, subMonths } from 'date-fns'
+import { format, parseISO, isFuture, addDays, subDays, startOfMonth, endOfMonth, startOfWeek, eachDayOfInterval, addMonths, subMonths } from 'date-fns'
 import { es } from 'date-fns/locale'
 import { toast } from 'sonner'
 import { useHabitsStore } from '@/features/habits/store'

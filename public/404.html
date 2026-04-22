@@ -4,9 +4,8 @@
   <meta charset="utf-8">
   <title>HabitFlow</title>
   <script>
-    // Redirect SPA routes to index.html preserving the path
-    const path = window.location.pathname.replace('/HabitFlow', '') || '/';
-    sessionStorage.setItem('redirect', path + window.location.search);
+    // Save full path + query so index.html can restore it after redirect
+    sessionStorage.setItem('redirect', window.location.pathname + window.location.search);
     window.location.replace('/HabitFlow/');
   </script>
 </head>
