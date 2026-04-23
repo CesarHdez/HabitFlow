@@ -23,11 +23,14 @@ export function AuthGate({ children }: AuthGateProps) {
       return
     }
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       _setSession(session)
       if (session) {
         fetchHabits()
-      } else if (location.pathname !== '/login') {
+        if (window.location.pathname.endsWith('/login')) {
+          navigate('/', { replace: true })
+        }
+      } else if (event === 'SIGNED_OUT') {
         navigate('/login', { replace: true })
       }
     })
